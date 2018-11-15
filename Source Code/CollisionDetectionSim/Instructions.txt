@@ -1,0 +1,19 @@
+NOTE: These paragraphs will very likely need to be split up so they can fit into the tutorial's designated text box area.
+
+** What is AABB Collision? ** : Also known as 'Axis-Aligned Bounding Box' Collision, AABB Collision forms a rectangular hitbox, or bounding box, around the objects of a 2D game or interactive experience. It then checks to see if the bottom, top, right, or left sides of the bounding box are overlapping with another bounding box or other object. If overlap does occur, the function will return true for that specific side.
+
+** Step 1: Variables ** : Your specific method of setting up AABB Collision can vary, but you're going to need at least four variables for each object: its x coordinate, its y coordinate, the object's width, and the object's height. For the latter two, what you put will depend on where the object's center is. For the purpose of this tutorial, we are going to assume that the object's center will be directly in the middle of the object.
+
+** Step 2: Setting Up the Sides ** : Up next, you should have every object calculate the edges of its bounding box. This is done by taking the object's x and y coordinates, and then either adding or subtracting its width and height from those values. To find the right and left sides, you would add or subtract the width to its x value, respectively. To find the bottom and top sides, you would add or subtract the height to its y value, respectively.
+
+** Step 3: Detecting Collision ** : Finally, we have to write the function that checks to see if there is any overlap between the bounding boxes that we have created! To do this, the function will need to have two object inputs: one bounding box, and the "other" bounding box. For the sake of the tutorial, let's call them A and B.
+
+** Step 3: Detecting Collision (cont.d) ** : Next, include multiple "if" statements that check to see if the value of one of A's sides is either greater than or less than one of B's sides. Specifically, you will want to compare A's right and B's left, A's left and B's right, A's bottom and B's top, and A's top and B's bottom. If any of these "if" statements are true, you can either have the function return a general "collision detected" response or, if necessary, a response specific to those two sides.
+
+** Step 4: AABB In Action ** : As you may have noticed, there are several boxes strewn about the tutorial's screen. These boxes can be dragged around with the mouse, and if any of their sides overlap with another box's sides, all of the overlapping sides will glow a different color. You may have also noticed the big 'Gravity' button in the upper right-hand corner.
+
+** Step 4: AABB In Action (cont.d) ** : Clicking this 'Gravity' button will replace this blander scene with that of a warehouse, and the boxes will turn into crates affected by gravity! They will mainly check for bottom and top collisions at this point, using them to determine when to stop falling downwards.
+
+** Step 5: When to Not Use AABB ** : AABB certainly sounds like a handy way to detect collision, yes? Well, there are a number of situations in which using radial collision or point collision would be better. In general, AABB works best with square or rectangular objects. After that, collision detection using bounding boxes becomes more problematic as the objects grow more complex.
+
+** Step 5: When to Not Use AABB (cont.d) ** : This would be easily noticable with a circle, which would check for collision even in the otherwise empty corners of the object; in this case, radial collision would be best. If the object were even more complex, such as a player character, these extra collision zones would be even more apparent; point collision would be best for an object that is more complex than a square or a circle.
